@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * Implementation of hook_views_api().
  */
@@ -9,7 +7,7 @@ function nivo_slider_views_api() {
 }
 
 /**
- * Template function for views_rotator
+ * Template function for nivo_slider
  *
  * @param array $vars
  *  Array of template variables.
@@ -26,7 +24,6 @@ function template_preprocess_views_view_nivo_slider(&$vars) {
   
   drupal_add_js(array('nivo_slider' => $view_settings), 'setting');
   drupal_add_js(drupal_get_path('module', 'nivo_slider') .'/nivo_slider.js');
-  //print_r($options);
 }
 
 

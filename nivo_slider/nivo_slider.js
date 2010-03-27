@@ -1,5 +1,4 @@
 Drupal.behaviors.nivo_slider = function(context) {
-	//alert("hello");
 	$settings = Drupal.settings.nivo_slider;
 	  $('#slider').nivoSlider({
 			effect:$settings.effect,

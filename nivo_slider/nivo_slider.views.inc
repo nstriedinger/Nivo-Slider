@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Implementation of hook_views_plugins
+ */
 function nivo_slider_views_plugins() {
   return array(
     'style' => array(
