@@ -16,13 +16,29 @@ function template_preprocess_views_view_nivo_slider(&$vars) {
   drupal_add_css(drupal_get_path('module', 'nivo_slider') .'/nivo_slider.css');
   drupal_add_js(drupal_get_path('module', 'nivo_slider') .'/jquery.nivo.slider.pack.js');
   
+  // Get the view
   $view = $vars['view'];
+
+  // Get options from view
   $options = $view->style_plugin->options;
-  
-  $view_settings['animSpeed'] = check_plain($options['animSpeed']) * 1000;
-  $view_settings['effect'] = check_plain($options['effect']);
-  
-  drupal_add_js(array('nivo_slider' => $view_settings), 'setting');
+
+  // Create a tpl var for our view tpl
+  $vars['nivo_slider_id']                = 'nivo-slider-'. $view->name .'-'. $view->current_display;
+
+  // Process the options we want
+  $view_settings['effect']               = check_plain($options['effect']);
+  $view_settings['slices']               = check_plain($options['slices']);
+  $view_settings['animSpeed']            = check_plain($options['animSpeed']) * 1000;
+  $view_settings['pauseTime']            = check_plain($options['pauseTime']) * 1000;
+  $view_settings['directionNav']         = check_plain($options['directionNav']);
+  $view_settings['directionNavHide']     = check_plain($options['directionNavHide']);
+  $view_settings['controlNav']           = check_plain($options['controlNav']);
+  $view_settings['pauseOnHover']         = check_plain($options['pauseOnHover']);
+
+  // Wrap everything up and display client side
+  drupal_add_js(array('nivo_slider' => array($vars['nivo_slider_id'] => $view_settings)), 'setting');
+
+  // Initiate slider with vars from view
   drupal_add_js(drupal_get_path('module', 'nivo_slider') .'/nivo_slider.js');
 }
 

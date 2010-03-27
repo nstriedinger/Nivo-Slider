@@ -7,4 +7,3 @@ dependencies[] = jquery_update
 version = "6.x-1.x-dev"
 core = "6.x"
 project = "nivo_slider"
-datestamp = "1222166730"
