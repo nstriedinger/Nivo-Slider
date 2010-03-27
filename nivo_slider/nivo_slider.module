@@ -1,0 +1,32 @@
+<?php
+
+
+/**
+ * Implementation of hook_views_api().
+ */
+function nivo_slider_views_api() {
+  return array('api' => 2);
+}
+
+/**
+ * Template function for views_rotator
+ *
+ * @param array $vars
+ *  Array of template variables.
+ */
+function template_preprocess_views_view_nivo_slider(&$vars) {
+  drupal_add_css(drupal_get_path('module', 'nivo_slider') .'/nivo_slider.css');
+  drupal_add_js(drupal_get_path('module', 'nivo_slider') .'/jquery.nivo.slider.pack.js');
+  
+  $view = $vars['view'];
+  $options = $view->style_plugin->options;
+  
+  $view_settings['animSpeed'] = check_plain($options['animSpeed']) * 1000;
+  $view_settings['effect'] = check_plain($options['effect']);
+  
+  drupal_add_js(array('nivo_slider' => $view_settings), 'setting');
+  drupal_add_js(drupal_get_path('module', 'nivo_slider') .'/nivo_slider.js');
+  //print_r($options);
+}
+
+
