@@ -10,11 +10,13 @@ Requirements: Drupal 6.x, Views, jQuery update
 
 2. Goto Administer > Site Building > Modules and enable Nivo Slider.
 
-3. Goto Administer > Site Building > Views and edit or add a view.
+3. Add views template to theme views-view-fields--nivo-slider.tpl.php
 
-4. In the style options choose Nivo Slider.
+4. Goto Administer > Site Building > Views and edit or add a view.
 
-5. Optionally, Select the settings icon next to the Nivo Slider style and choose custom
+5. In the style options choose Nivo Slider.
+
+6. Optionally, Select the settings icon next to the Nivo Slider style and choose custom
    settings for the view.
 
 ###   NOTES
