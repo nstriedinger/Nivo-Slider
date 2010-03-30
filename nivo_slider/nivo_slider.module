@@ -13,9 +13,9 @@ function nivo_slider_views_api() {
  *  Array of template variables.
  */
 function template_preprocess_views_view_nivo_slider(&$vars) {
-  drupal_add_css(libraries_get_path('nicoslider') .'/nivo-slider.css');
+  drupal_add_css(libraries_get_path('nivoslider') .'/nivo-slider.css');
   drupal_add_css(drupal_get_path('module', 'nivo_slider') .'/nivo_slider.css');
-  drupal_add_js(libraries_get_path('nicoslider') .'/jquery.nivo.slider.pack.js');
+  drupal_add_js(libraries_get_path('nivoslider') .'/jquery.nivo.slider.pack.js');
   
   // Get the view
   $view = $vars['view'];
