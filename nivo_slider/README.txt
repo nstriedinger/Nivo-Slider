@@ -1,7 +1,7 @@
 ###   ABOUT 
 
 Nivo Slider, Version 1.0
-Authors: n8tron and glerous
+Authors: n8tron and gleroux
 Requirements: Drupal 6.x, Views, jQuery update
 
 ###   INSTALLATION 

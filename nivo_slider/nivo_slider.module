@@ -13,6 +13,8 @@ function nivo_slider_views_api() {
  *  Array of template variables.
  */
 function template_preprocess_views_view_nivo_slider(&$vars) {
+  // In the libararies module create /sites/all/libraries/nivoslider to copy css and plugin
+  // Grab files from libraries module and nivo_slider module
   drupal_add_css(libraries_get_path('nivoslider') .'/nivo-slider.css');
   drupal_add_css(drupal_get_path('module', 'nivo_slider') .'/nivo_slider.css');
   drupal_add_js(libraries_get_path('nivoslider') .'/jquery.nivo.slider.pack.js');
